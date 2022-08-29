@@ -1,5 +1,5 @@
 # WishBin
-Our project- WishBin is an API-based e-commerce website with a range of services and features. This is mainly a MERN-stack project
+Our project- WishBin is an API-based e-commerce website with a range of services and features. This is mainly a MERN-stack project. In this project therr are three apis: e-commerce, bank, and supplier. In our project the e-commerce api is built in the folder called api. Bank and Supplier apis are built up in BankandSupplier folder.
 
 
 # Project-Members

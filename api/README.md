@@ -12,3 +12,4 @@
   * we have to install the related dependency as per requirement in the code
   
 The server will start at [http://localhost:5000](http://localhost:5000) 
+For the project, in building api we need to use nodejs, mongodb, expressjs. This is a restapi by which the connections will be buit up.

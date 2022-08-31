@@ -6,6 +6,7 @@ import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,6 +18,8 @@ import { useSelector } from "react-redux";
 import NewTry from "./pages/NewTry";
 import Getpost from "./pages/Getpost";
 import NewTry2 from "./pages/NewTry2";
+import Transition from "./pages/Transition";
+import Supplier from "./pages/Supplier";
 
 
 const App = () => {
@@ -45,8 +48,20 @@ const App = () => {
         <Route  path="/newtry2"
           element={<Getpost/>}
         />
-         <Route  path="/newpost"
+         <Route  path="/tran/:id"
+          element={<Getpost/>}
+        />
+        <Route  path="/tran2/:id2"
           element={<NewTry2/>}
+        />
+          <Route  path="/trial"
+          element={<Transition/>}
+        />
+        <Route  path="/trial2"
+          element={<Supplier/>}
+        />
+         <Route  path="/order"
+          element={<Success/>}
         />
      {/* <Route path="/login">
   {user ? <Navigate  to="/" /> : <Login />}

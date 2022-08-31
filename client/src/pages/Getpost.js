@@ -3,8 +3,13 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 function Getpost() {
     const [account, setAccount] = useState([])
+    const location = useLocation();
+    const id1 = location.pathname.split("/")[2];
+    console.log(id1)
     useEffect(() => {
         axios.get("/users").then(res => {
             console.log(res)
@@ -18,7 +23,7 @@ function Getpost() {
     }, [])
 
 const f=account.find(obj=>{
-    return obj._id==="630bf82bcbb4593ab2cc2660"
+    return obj.name===id1
 });
 console.log(f)
 // const r=account.map(i => (
@@ -32,10 +37,11 @@ console.log(f)
 // }</span>)
 // })
 // console.log(t)
-let navigate = useNavigate(); 
-const routeChange = () =>{ 
-    let path = `/newpost`; 
-    navigate(path);
+
+const navigate = useNavigate();
+
+  const toComponentB=()=>{
+navigate('/trial2',{state:{id:1,name:id1,}});
   }
 
 
@@ -44,9 +50,18 @@ const routeChange = () =>{
         <div>
             {f&&(
                 <div>
+                    <h2>name:{f.name}</h2>
             <h2>id: {f._id}</h2>
           <h2>transaction: {f.transaction.transaction_id}</h2>
-          </div>)}
+          <button><Link to="/trial">
+            Add note
+           </Link> </button>
+          </div>
+          
+          )
+          
+          }
+          <div> <button onClick={()=>{toComponentB()}} >Component B</button></div>
             
         <hr/>
         <div>
@@ -56,16 +71,29 @@ const routeChange = () =>{
                     <li
                         key={acc._id}>
                         {acc.name}
+                        <button><Link to={`/tran2/${acc._id}`}>
+            Add note
+           </Link> </button>
+           <button><Link to={`/trial/${acc._id}`}>
+            check
+           </Link> </button>
+           
                     </li>
+                   
                    
                 ))
 
             }
+           
             {/* <li key="630bf4e2cbb4593ab2cc2652">{f.name}</li> */}
             
             </ul>
-            <button onClick={routeChange} className="btn btn-lg btn-info">
-        Add note
+            <button  className="btn btn-lg btn-info">
+            {/* <Link to={`/tran/${f._id}`}> */}
+            Add note
+          {/* </Link> */}
+       
+
       </button>
       
             </div>

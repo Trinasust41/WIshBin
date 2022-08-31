@@ -67,7 +67,7 @@ function NewTry(){
     
 
       <button className="btn btn-lg btn-info">
-        Add note
+        check
       </button>
       <Link to="/">Home</Link>
       </div>
